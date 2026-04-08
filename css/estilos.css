@@ -13,6 +13,16 @@
 
   --txt-heading: "Bebas Neue", sans-serif;
   --txt-base: "Nunito Sans", sans-serif;
+
+  --contenedor-sz: min(64rem, 100%);
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -32,10 +42,98 @@ h2 {
   font-family: var(--txt-heading);
 }
 
+footer h1 {
+  font-size: 1.5rem;
+}
+
+/* Estilos para el Header */
+.contenedor-header {
+  width: var(--contenedor-sz);
+  margin: 0 auto;
+  padding: 2rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contenedor-header ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
 header h1 {
   color: var(--accent-color-400);
 }
 
-footer h1 {
-  font-size: 1.5rem;
+/* Estilos para las secciones */
+section {
+  width: var(--contenedor-sz);
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Catálogo homepage */
+.contenedor-catalogo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 2rem 1.5rem;
+}
+
+.contenedor-catalogo article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+.contenedor-catalogo img {
+  width: 100%;
+  object-fit: cover;
+  aspect-ratio: 3 / 5;
+}
+
+.btn-outline {
+  font-family: var(--txt-base);
+  font-size: 1rem;
+  background: none;
+  border: 0.2rem solid var(--accent-color-400);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-outline:hover {
+  background-color: var(--accent-color-400);
+  cursor: pointer;
+}
+
+.btn-fill {
+  font-family: var(--txt-base);
+  font-size: 1rem;
+  background-color: var(--accent-color-400);
+  border: 0.2rem solid var(--accent-color-400);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn-fill:hover {
+  background-color: var(--accent-color-500);
+  border: 0.2rem solid var(--accent-color-500);
+  cursor: pointer;
+}
+
+/* Estilos para el footer */
+.contenedor-footer {
+  width: var(--contenedor-sz);
+  padding: 2rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contenedor-footer ul {
+  list-style: none;
 }
