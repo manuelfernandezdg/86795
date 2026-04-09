@@ -171,6 +171,10 @@ li {
   gap: 1rem;
 }
 
-/* Vínculos */
-
 /* clamp() */
+
+#bienvenida h1 {
+  font-size: clamp(3rem, 6vw ,7rem);
+}
+
+/* Vínculos */
