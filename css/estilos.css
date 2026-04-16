@@ -2,7 +2,7 @@
 
 :root {
   --bg-color-200:hsl(214, 25%, 3%);
-  --bg-color-200-75:hsla(214, 25%, 11%, 0.75);
+  --bg-color-200-75:hsla(214, 25%, 11%, 0.90);
   --bg-color-400:hsl(214, 20%, 16%);
 
   --text-color:hsl(215, 25%, 90%);
@@ -26,7 +26,7 @@
 }
 
 body {
-  background-color: var(--bg-200);
+  background-color: var(--bg-color-200);
   color: var(--text-color);
   font-family: var(--txt-base);
   line-height: 1.5;
@@ -40,6 +40,7 @@ footer {
 h1,
 h2 {
   font-family: var(--txt-heading);
+  font-weight: 500;
 }
 
 footer h1 {
@@ -76,10 +77,14 @@ section {
   margin: 0 auto;
 }
 
+#bienvenida {
+  display: none;
+}
+
 /* Catálogo homepage */
 .contenedor-catalogo {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   gap: 2rem 1.5rem;
 }
 
@@ -129,17 +134,20 @@ section {
 /* Estilos para el footer */
 .contenedor-footer {
   width: var(--contenedor-sz);
+  
   padding: 2rem;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
+
+  display: grid;
   gap: 1rem;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .contenedor-footer ul {
   list-style: none;
+}
+
+.contenedor-footer p {
+  justify-self: end;
 }
 
 /* Regla para pantallas y ancho HASTA 768px */
@@ -149,4 +157,36 @@ section {
     flex-direction: row;
   }  
 
+  #bienvenida {
+    border: none;
+    padding: 0;
+    min-height: 32rem;
+    background-image: url('../img/bienvenida.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+  }
+
+  .contenedor-bienvenida {
+    background-color: var(--bg-color-200-75);
+    padding: 2rem 1rem;
+  }
+
+  .contenedor-bienvenida h1 {
+    color: var(--accent-color-400);
+  }
+
+  .contenedor-footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .contenedor-footer p {
+    align-self: end;
+  }
 }
