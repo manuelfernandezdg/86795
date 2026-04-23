@@ -1,18 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root {
-  --bg-color-200:hsl(214, 25%, 3%);
+  --bg-color-200:hsl(214, 25%, 5%);
   --bg-color-200-75:hsla(214, 25%, 11%, 0.85);
   --bg-color-400:hsl(214, 20%, 16%);
 
   --text-color:hsl(215, 25%, 90%);
 
-  --accent-color-200:hsl(24, 43%, 7%);
+  --accent-color-200:hsl(2, 100%, 8%);
   --accent-color-400:hsl(2, 86%, 56%);
   --accent-color-500:hsl(0, 100%, 78%);
 
   --txt-heading: "Bebas Neue", sans-serif;
   --txt-base: "Nunito Sans", sans-serif;
+
+  font-size: 16px;
 }
 
 *,
@@ -69,6 +71,14 @@ img:hover {
   border:0.2rem solid var(--accent-color-500);
   filter: grayscale(0%);
   cursor: pointer;
+}
+
+span {
+  display: inline-block;
+  background-color: var(--accent-color-200);
+  color: var(--accent-color-400);
+  padding: 0.15rem 0.5rem 0.05rem;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 /* Modelo de caja */
@@ -192,11 +202,7 @@ li {
   gap: 1rem;
 }
 
-/* clamp() */
-
-#bienvenida h1 {
-  font-size: clamp(3rem, 6vw ,7rem);
-}
+/* Clase 5 */
 
 /* Vínculos */
 /* Estilos para TODOS los links */
@@ -223,7 +229,7 @@ a.link-header:visited {
 
 a.link-header:hover,
 a.link-header:active {
-  color: var(--accent-color-400);
+  color: var(--bg-color-200);
   background-color: var(--accent-color-500);
 }
 
@@ -238,7 +244,72 @@ a.link-header:active {
   text-align: center;
 }
 
-/* Responsive */
+.javier li:hover {
+  background-color: var(--accent-color-200);
+}
+
+
+/* Clase 6 */
+/* em / rem */
+#relativas {
+  font-size: 32px;
+}
+
+#relativas h1 {
+  font-size: 4rem;
+}
+
+#relativas h2 {
+  font-size: 1.5em;
+}
+
+#relativas p {
+  font-size: 1em;
+}
+
+/* Porcentajes*/
+.contenedor-porcentajes {
+  width: 80%;
+  border: 0.2rem solid var(--accent-color-400);
+  min-height: 250px;
+  display: block;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.item-porcentajes {
+  background-color: var(--bg-color-400);
+  padding: 1rem;
+  display: block;
+  width: 80%;
+  min-height: 250px;
+  margin: 0 auto;
+}
+
+/* Viewport */
+.viewport {
+  width: 50vw; /* viewport width */
+  background-color: var(--bg-color-400);
+  min-height: 32vh; /* viewport height */
+}
+
+/* clamp() */
+
+#clamp h1 {
+  font-size: clamp(3rem, 6vw ,7rem);
+  font-weight: 600;
+}
+
+#clamp h2 {
+  font-size: clamp(1.5rem, 4vw ,5rem);
+  font-weight: 400;
+}
+
+#clamp p {
+  font-size: clamp(1rem, 4vw ,1.5rem);
+}
+
+/* Responsive / Clase 5 */
 @media all and (min-width: 768px) {
   .javier {
     grid-template-columns: repeat(2, 1fr);

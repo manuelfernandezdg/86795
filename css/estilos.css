@@ -150,8 +150,22 @@ section {
   justify-self: end;
 }
 
+/* Quienes somos */
+#quienes-somos {
+  min-height: 75vh;
+}
+
+#quienes-somos img {
+  display: none;
+}
+
 /* Regla para pantallas y ancho HASTA 768px */
 @media screen and (min-width:768px) {
+
+  #quienes-somos img {
+    display: inline-block;
+    width: 100%;
+  }
 
   .contenedor-header {
     flex-direction: row;
