@@ -333,7 +333,104 @@ a.link-header:active {
   font-size: 1.5rem;
 }
 
+.position main {
+  min-height: 100vh;
+}
 
+/* Position static */
+.p-static {
+  position: static;
+}
+
+/* Position relative */
+.p-relative {
+  position: relative;
+  margin: 2rem auto;
+  width: min(14rem, 100%);
+  min-height: 14rem;
+}
+
+/* Position absolute */
+.p-absolute {
+  position: absolute;
+  top: -1rem;
+  right: -2rem;
+}
+
+/* Position fixed */
+.position img {
+  width: 3rem;
+  border: none;
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+}
+
+.position header {
+  position: sticky;
+  top: 1.5rem;
+  z-index: 1000;
+  width: min(62rem, 100%);
+  border-radius: 5rem;
+  margin: 0 auto;
+}
+
+.position main {
+  padding-top: 3rem;
+}
+
+.position footer {
+  position: sticky;
+  bottom: 0;
+}
+
+a.contacto:link,
+a.contacto:visited {
+  background-image: url('../img/whatsapp-brands-solid-full.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: inline-block;
+  width: 3rem;
+  aspect-ratio: 1;
+
+  position: fixed;
+  right: 1.5rem;
+  bottom: 6rem;
+}
+
+a.contacto:hover,
+a.contacto:active {
+
+}
+
+.favoritos {
+  background-color:rgba(240, 248, 255, 0);
+  border: none;
+  background-image: url('../img/favorite-outline.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 3rem;
+  aspect-ratio: 1;
+  cursor: pointer;
+
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+}
+
+.favoritos:hover {
+  background-image: url('../img/favorite-fill.svg');
+}
+
+.sr-only {
+  position: absolute;
+  top: -4000px;
+  left: -4000px;
+  display: block;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
 
 
 
@@ -342,6 +439,11 @@ a.link-header:active {
   .javier {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .position footer {
+  position: static;
+  }
+
 }
 
 @media all and (min-width:930px) {
