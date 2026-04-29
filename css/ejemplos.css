@@ -309,6 +309,34 @@ a.link-header:active {
   font-size: clamp(1rem, 4vw ,1.5rem);
 }
 
+
+/* Clase 7, position, accesibilidad y sr-only */
+.position {
+  margin: 0;
+  padding: 0;
+}
+
+.position header,
+.position footer {
+  background-color: var(--bg-color-400);
+  padding: 1rem;
+  text-align: center;
+}
+
+.position header h1,
+.position footer h1 {
+  color: var(--accent-color-400);
+  font-weight: 500;
+}
+
+.position footer h1 {
+  font-size: 1.5rem;
+}
+
+
+
+
+
 /* Responsive / Clase 5 */
 @media all and (min-width: 768px) {
   .javier {
