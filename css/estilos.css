@@ -91,8 +91,14 @@ section {
 .contenedor-catalogo article {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: stretch;
+  gap: 0.5rem;
+}
+
+.contenedor-article-btn {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
 

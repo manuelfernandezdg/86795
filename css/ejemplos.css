@@ -26,7 +26,8 @@
 }
 
 body {
-  background-color: var(--bg-color-200);
+  background: #020024;
+  background: linear-gradient(0deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 49%, rgba(0, 212, 255, 1) 100%);
   color: var(--text-color);
   font-family: var(--txt-base);
   line-height: 1.5;
@@ -358,13 +359,13 @@ a.link-header:active {
 }
 
 /* Position fixed */
-.position img {
+/* .position img {
   width: 3rem;
   border: none;
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
-}
+} */
 
 .position header {
   position: sticky;
@@ -432,6 +433,17 @@ a.contacto:active {
   overflow: hidden;
 }
 
+/* Clase 8 */
+.contenedor-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contenedor-cards article {
+  display: grid;
+  gap: 0.5rem;
+  align-content: space-between;
+}
 
 
 /* Responsive / Clase 5 */
