@@ -25,6 +25,16 @@
   padding: 0;
 }
 
+.sr-only {
+  position: absolute;
+  display: block;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  top: -4000px;
+  left: -4700px;
+}
+
 body {
   background-color: var(--bg-color-200);
   color: var(--text-color);
@@ -35,6 +45,12 @@ body {
 header,
 footer {
   background-color: var(--bg-color-400);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 998;
 }
 
 h1,
@@ -69,6 +85,64 @@ footer h1 {
 header h1 {
   color: var(--accent-color-400);
 }
+
+/* Menú principal y toggle */
+.menu-btn {
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  width: 2.5rem;
+  aspect-ratio: 1;
+  background-image: url('../img/menu-lg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 999;
+}
+
+.menu-btn[aria-expanded="true"] {
+  background-image: url('../img/close.svg');
+}
+
+.primary-navigation {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 65vw;
+  transform: translateX(+100%) translateY(0%);
+  transition: transform 350ms ease-out;
+  background-color: var(--bg-color-200-75);
+}
+
+@supports (backdrop-filter: blur(1em)) {
+  .primary-navigation {
+    background: none;
+    backdrop-filter: blur(2em);
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(1em)) {
+  .primary-navigation {
+    -webkit-backdrop-filter: blur(2em);
+  }
+}
+
+.primary-navigation[data-visible="true"] {
+  transform: translateX(0%) translateY(0%);
+}
+
+.fantasma {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 997;
+}
+
+
+
 
 /* Estilos para las secciones */
 section {
