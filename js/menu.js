@@ -1,6 +1,6 @@
 const primaryNav = document.querySelector('.primary-navigation');
 const navToggle = document.querySelector('.menu-btn');
-const closeAll = document.querySelector('.fantasma');
+const closeAll = document.querySelector('.contenido');
 
 navToggle.addEventListener('click', () => {
   const visibility = primaryNav.getAttribute('data-visible');

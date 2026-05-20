@@ -124,6 +124,7 @@ header h1 {
 
 @supports (-webkit-backdrop-filter: blur(1em)) {
   .primary-navigation {
+    backdrop-filter: blur(2em);
     -webkit-backdrop-filter: blur(2em);
   }
 }
@@ -158,8 +159,15 @@ section {
 /* Catálogo homepage */
 .contenedor-catalogo {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
-  gap: 2rem 1.5rem;
+  grid-auto-flow: column;
+  grid-auto-columns: 14rem;
+  grid-template-rows: 1fr;
+  gap: 2rem;
+ 
+  overflow-x: scroll;
+  -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory;
+  padding: 2rem 0;
 }
 
 .contenedor-catalogo article {
@@ -282,5 +290,16 @@ section {
 
   .contenedor-footer p {
     align-self: end;
+  }
+
+  /* Catálogo para escritorio*/
+  .contenedor-catalogo {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+    gap: 2rem 1.5rem;
+    grid-auto-flow: initial;
+    gap: 2rem;
+    padding: 2rem 0;
+    overflow: visible;
   }
 }
