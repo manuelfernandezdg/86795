@@ -14,6 +14,8 @@
   --txt-heading: "Bebas Neue", sans-serif;
   --txt-base: "Nunito Sans", sans-serif;
 
+  --txt-base-sz: clamp(1rem, 3vw, 1.5rem);
+
   --contenedor-sz: min(64rem, 100%);
 }
 
@@ -98,6 +100,7 @@ header h1 {
   background-position: center;
   background-size: cover;
   z-index: 999;
+  cursor: pointer;
 }
 
 .menu-btn[aria-expanded="true"] {
@@ -113,17 +116,28 @@ header h1 {
   transform: translateX(+100%) translateY(0%);
   transition: transform 350ms ease-out;
   background-color: var(--bg-color-200-75);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.primary-navigation ul {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 }
 
 @supports (backdrop-filter: blur(1em)) {
   .primary-navigation {
-    background: none;
+    background-color: var(--bg-color-200-75);
     backdrop-filter: blur(2em);
   }
 }
 
 @supports (-webkit-backdrop-filter: blur(1em)) {
   .primary-navigation {
+    background-color: var(--bg-color-200-75);
     backdrop-filter: blur(2em);
     -webkit-backdrop-filter: blur(2em);
   }
@@ -133,16 +147,18 @@ header h1 {
   transform: translateX(0%) translateY(0%);
 }
 
-.fantasma {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  z-index: 997;
+a.primary-link:link,
+a.primary-link:visited {
+  color: var(--text-color);
+  font-size: var(--txt-base-sz);
+  font-weight: 600;
+  text-decoration: none;
 }
 
-
+a.primary-link:hover,
+a.primary-link:active {
+  color: var(--accent-color-500);
+}
 
 
 /* Estilos para las secciones */
@@ -190,7 +206,8 @@ section {
   aspect-ratio: 3 / 5;
 }
 
-.btn-outline {
+/* Botones para las cards de productos*/
+.btn {
   font-family: var(--txt-base);
   font-size: 1rem;
   background: none;
@@ -199,25 +216,15 @@ section {
   border-radius: 0.5rem;
 }
 
-.btn-outline:hover {
+.btn:hover {
   background-color: var(--accent-color-400);
   cursor: pointer;
 }
 
-.btn-fill {
-  font-family: var(--txt-base);
-  font-size: 1rem;
+.btn.active {
   background-color: var(--accent-color-400);
-  border: 0.2rem solid var(--accent-color-400);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
 }
 
-.btn-fill:hover {
-  background-color: var(--accent-color-500);
-  border: 0.2rem solid var(--accent-color-500);
-  cursor: pointer;
-}
 
 /* Estilos para el footer */
 .contenedor-footer {
@@ -259,6 +266,7 @@ section {
     flex-direction: row;
   }  
 
+  /* Sólo visible en pantallas grandes */
   #bienvenida {
     border: none;
     padding: 0;
@@ -266,9 +274,7 @@ section {
     background-image: url('../img/bienvenida.png');
     background-repeat: no-repeat;
     background-size: cover;
-
     text-align: center;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -281,7 +287,12 @@ section {
   }
 
   .contenedor-bienvenida h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
     color: var(--accent-color-400);
+  }
+
+  .contenedor-bienvenida p {
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
 
   .contenedor-footer {

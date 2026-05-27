@@ -11,13 +11,13 @@ const productosCatalogo = [
 
 const catalogo = productosCatalogo.map(p => `
   <article>
-    <img src="${p.img}" alt="Portada del comic ${p.titulo}}">
-    <h2>${p.titulo}}</h2>
+    <img src="${p.img}" alt="Portada del comic ${p.titulo}">
+    <h2>${p.titulo}</h2>
     <h3>$${p.precio.toLocaleString('es-AR')}</h3>
-    <p>${p.autor} y Alex Ross, editorial ${p.editorial}</p>
+    <p>${p.autor}, editorial ${p.editorial}</p>
     <div class="contenedor-article-btn">
-      <button class="btn-outline">Favorito</button>
-      <button class="btn-fill">Agregar</button>
+      <button class="btn">Fav</button>
+      <button class="btn">Carrito</button>
     </div>
   </article>
   `).join('');
