@@ -78,6 +78,12 @@ footer h1 {
   align-items: center;
 }
 
+.contenedor-header .controles {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .contenedor-header ul {
   list-style: none;
   display: flex;
@@ -129,14 +135,18 @@ header h1 {
 }
 
 @supports (backdrop-filter: blur(1em)) {
-  .primary-navigation {
+  .primary-navigation,
+  .primary-fav,
+  .primary-cart {
     background-color: var(--bg-color-200-75);
     backdrop-filter: blur(2em);
   }
 }
 
 @supports (-webkit-backdrop-filter: blur(1em)) {
-  .primary-navigation {
+  .primary-navigation,
+  .primary-fav,
+  .primary-cart {
     background-color: var(--bg-color-200-75);
     backdrop-filter: blur(2em);
     -webkit-backdrop-filter: blur(2em);
@@ -224,6 +234,246 @@ section {
 .btn.active {
   background-color: var(--accent-color-400);
 }
+
+
+
+
+
+
+
+/* Favoritos, carrito y contadores */
+/* Favoritos */
+.fav-btn {
+  position: relative;
+  background: none;
+  border: none;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  background-image: url('../img/favorite-outline.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+/* Favoritos en reposo */
+.fav-btn:hover {
+    background-image: url('../img/favorite-fill.svg');
+  cursor: pointer;
+}
+/* Favoritos hover */
+.fav-btn[aria-expanded="true"] {
+  background-image: url('../img/close.svg');
+}
+/* Muestra la cuenta de favoritos elegidos, oculto hasta que alguien agrega un elemento a favoritos */
+.fav-count {
+  position: absolute;
+  font-size: 0.6rem;
+  right: -1rem;
+  top: -1rem;
+  width: 1.7rem;
+  aspect-ratio: 1;
+  padding: 0.4rem;
+  background-color: var(--accent-color-400);
+  border-radius: 100%;
+  display: none;
+}
+/* Visible si existe un favorito */
+.fav-count.active {
+  display: block;
+}
+/* Despliega la vista del panel favoritos, oculto hasta que los usuarios quieren ver el elemento */
+.primary-fav {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 75vw;
+  background-color: var(--bg-color-200-75);
+  z-index: 1000;
+  overflow-y: scroll;
+  padding: 1rem;
+  transform: translateX(+100%) translateY(0%);
+  transition: transform 350ms ease-out;
+}
+/* Visible */
+.primary-fav[data-visible="true"] {
+  transform: translateX(0%) translateY(0%);
+  display: block;
+}
+
+/* Layout del panel favoritos y estilos para sus elementos */
+.mis-favoritos h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.mis-favoritos h1 button {
+  background: none;
+  border: none;
+  width: 2rem;
+  aspect-ratio: 1;
+  background-image: url('../img/close.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mis-favoritos h1 button:hover {
+  border: 0.2rem solid var(--accent-color-400);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.mis-favoritos ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.mis-favoritos img {
+  width: 4rem;
+}
+
+.mis-favoritos li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.mis-favoritos li:hover {
+  background-color: var(--bg-color-200);
+}
+
+.btn-fav-remove {
+  position: relative;
+  background: none;
+  border: none;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  background-image: url('../img/close.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.btn-fav-remove:hover {
+  border: 0.2rem solid var(--accent-color-400);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+
+
+/* Carrito */
+.cart-btn {
+  position: relative;
+  background: none;
+  border: none;
+  width: 2rem;
+  aspect-ratio: 1/1;
+  background-image: url('../img/shopping_cart-outline.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.cart-btn:hover {
+    background-image: url('../img/shopping_cart-fill.svg');
+  cursor: pointer;
+}
+
+.cart-btn[aria-expanded="true"] {
+  background-image: url('../img/close.svg');
+}
+
+.cart-count {
+  position: absolute;
+  font-size: 0.6rem;
+  right: -1rem;
+  top: -1rem;
+  width: 1.7rem;
+  aspect-ratio: 1;
+  padding: 0.4rem;
+  background-color: var(--accent-color-400);
+  border-radius: 100%;
+  display: none;
+}
+
+.cart-count.active {
+  display: block;
+}
+
+/* Despliega la vista del panel favoritos, oculto hasta que los usuarios quieren ver el elemento */
+.primary-cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  min-width: 75vw;
+  background-color: var(--bg-color-200-75);
+  z-index: 1000;
+  overflow-y: scroll;
+  padding: 1rem;
+  transform: translateX(+100%) translateY(0%);
+  transition: transform 350ms ease-out;
+}
+/* Visible */
+.primary-cart[data-visible="true"] {
+  transform: translateX(0%) translateY(0%);
+  display: block;
+}
+
+.mi-carrito h1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+}
+
+.mi-carrito h1 button {
+  background: none;
+  border: none;
+  width: 2rem;
+  aspect-ratio: 1;
+  background-image: url('../img/close.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.mi-carrito h1 button:hover {
+  border: 0.2rem solid var(--accent-color-400);
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.mi-carrito ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.mi-carrito img {
+  width: 4rem;
+}
+
+.mi-carrito li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.mi-carrito li:hover {
+  background-color: var(--bg-color-200);
+}
+
+
+
+
+
 
 
 /* Estilos para el footer */

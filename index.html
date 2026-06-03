@@ -7,27 +7,51 @@
     <title>Pulp Fiction</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/menu.js" defer></script>
-    <script src="js/clase11.js" defer></script>
+    <script src="js/clase12.js" defer></script>
   </head>
   <body>
     <header>
       <div class="contenedor-header">
         <h1>PULP FICTION</h1>
-        
-        <button class="menu-btn" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false">
-          <span class="sr-only">Menu principal</span>
-        </button>
 
-        <nav id="primary-navigation" data-visible="false" class="primary-navigation">
-          <ul>
-            <li><a class="primary-link" href="#">Catálogo</a></li>
-            <li><a class="primary-link" href="#">Quienes somos</a></li>
-            <li><a class="primary-link" href="#">Mi Perfil</a></li>
-          </ul>
-        </nav>
+        <div class="controles">
+          <button class="fav-btn" aria-label="Ver mis favoritos" aria-controls="primary-fav">
+            <span class="sr-only">Mis favoritos</span>
+            <span id="fav-count" class="fav-count">1</span>
+          </button>
+
+          <aside class="mis-favoritos primary-fav" id="primary-fav" data-visible="false">
+            <h1>Mis favoritos <button class="fav-btn-cerrar"><span class="sr-only">Cerrar ventana</span></button></h1>
+            <ul class="lista-favoritos">
+            </ul>
+          </aside>
+
+          <button class="cart-btn" aria-label="Ver mi carrito" aria-controls="primary-cart" aria-expanded="false">
+            <span class="sr-only">Ver mi carrito</span>
+            <span class="cart-count"></span>
+          </button>
+
+          <aside class="mi-carrito primary-cart" id="primary-cart" data-visible="false">
+            <h1>Mi carrito <button class="cart-btn-cerrar"><span class="sr-only">Cerrar ventana</span></button></h1>
+            <ul class="lista-carrito">
+            </ul>
+          </aside>
+          
+          <button class="menu-btn" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false">
+            <span class="sr-only">Menu principal</span>
+          </button>
+
+          <nav id="primary-navigation" data-visible="false" class="primary-navigation">
+            <ul>
+              <li><a class="primary-link" href="#">Catálogo</a></li>
+              <li><a class="primary-link" href="#">Quienes somos</a></li>
+              <li><a class="primary-link" href="#">Mi Perfil</a></li>
+            </ul>
+          </nav>
+        </div>
       </div>
     </header>
-    <main  class="contenido">
+    <main class="contenido">
       <section id="bienvenida">
         <div class="contenedor-bienvenida">
           <h1>Bienvenidos a PULP FICTION</h1>
