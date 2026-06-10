@@ -25,6 +25,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: var(--txt-base);
 }
 
 .sr-only {
@@ -40,7 +41,6 @@
 body {
   background-color: var(--bg-color-200);
   color: var(--text-color);
-  font-family: var(--txt-base);
   line-height: 1.5;
 }
 
@@ -132,25 +132,6 @@ header h1 {
   display: grid;
   justify-content: center;
   justify-items: center;
-}
-
-@supports (backdrop-filter: blur(1em)) {
-  .primary-navigation,
-  .primary-fav,
-  .primary-cart {
-    background-color: var(--bg-color-200-75);
-    backdrop-filter: blur(2em);
-  }
-}
-
-@supports (-webkit-backdrop-filter: blur(1em)) {
-  .primary-navigation,
-  .primary-fav,
-  .primary-cart {
-    background-color: var(--bg-color-200-75);
-    backdrop-filter: blur(2em);
-    -webkit-backdrop-filter: blur(2em);
-  }
 }
 
 .primary-navigation[data-visible="true"] {
@@ -254,14 +235,10 @@ section {
   background-position: center;
   background-size: cover;
 }
-/* Favoritos en reposo */
+/* Favoritos en reposo:hover */
 .fav-btn:hover {
-    background-image: url('../img/favorite-fill.svg');
+  background-image: url('../img/favorite-fill.svg');
   cursor: pointer;
-}
-/* Favoritos hover */
-.fav-btn[aria-expanded="true"] {
-  background-image: url('../img/close.svg');
 }
 /* Muestra la cuenta de favoritos elegidos, oculto hasta que alguien agrega un elemento a favoritos */
 .fav-count {
@@ -313,15 +290,14 @@ section {
   border: none;
   width: 2rem;
   aspect-ratio: 1;
-  background-image: url('../img/close.svg');
+  background-image: url('../img/close-fill.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .mis-favoritos h1 button:hover {
-  border: 0.2rem solid var(--accent-color-400);
-  border-radius: 0.5rem;
+  background-image: url('../img/close-fill-hover.svg');
   cursor: pointer;
 }
 
@@ -350,21 +326,18 @@ section {
   position: relative;
   background: none;
   border: none;
-  width: 2rem;
+  width: 1.5rem;
   aspect-ratio: 1/1;
-  background-image: url('../img/close.svg');
+  background-image: url('../img/close-fill.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .btn-fav-remove:hover {
-  border: 0.2rem solid var(--accent-color-400);
-  border-radius: 0.5rem;
+  background-image: url('../img/close-fill-hover.svg');
   cursor: pointer;
 }
-
-
 
 /* Carrito */
 .cart-btn {
@@ -384,10 +357,6 @@ section {
   cursor: pointer;
 }
 
-.cart-btn[aria-expanded="true"] {
-  background-image: url('../img/close.svg');
-}
-
 .cart-count {
   position: absolute;
   font-size: 0.6rem;
@@ -405,6 +374,7 @@ section {
   display: block;
 }
 
+
 /* Despliega la vista del panel favoritos, oculto hasta que los usuarios quieren ver el elemento */
 .primary-cart {
   position: fixed;
@@ -415,6 +385,9 @@ section {
   background-color: var(--bg-color-200-75);
   z-index: 1000;
   overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   padding: 1rem;
   transform: translateX(+100%) translateY(0%);
   transition: transform 350ms ease-out;
@@ -422,7 +395,6 @@ section {
 /* Visible */
 .primary-cart[data-visible="true"] {
   transform: translateX(0%) translateY(0%);
-  display: block;
 }
 
 .mi-carrito h1 {
@@ -437,15 +409,14 @@ section {
   border: none;
   width: 2rem;
   aspect-ratio: 1;
-  background-image: url('../img/close.svg');
+  background-image: url('../img/close-fill.svg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
 .mi-carrito h1 button:hover {
-  border: 0.2rem solid var(--accent-color-400);
-  border-radius: 0.5rem;
+  background-image: url('../img/close-fill-hover.svg');
   cursor: pointer;
 }
 
@@ -458,19 +429,91 @@ section {
   width: 4rem;
 }
 
+.mi-carrito h2 {
+  color: var(--accent-color-400);
+}
+
+.mi-carrito .total {
+  text-align: right;
+}
+
+.mi-carrito .checkout {
+  background-color: var(--accent-color-400);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.8rem 1rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 1rem;
+}
+
+.mi-carrito .checkout:hover {
+  background-color: var(--accent-color-500);
+  color: var(--bg-color-200);
+  cursor: pointer;
+}
+
 .mi-carrito li {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
   padding: 1rem;
+  border-bottom: 0.1rem solid var(--text-color);
 }
 
 .mi-carrito li:hover {
   background-color: var(--bg-color-200);
 }
 
+/* Controles */
+.cart-controles {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
 
+.menos,
+.mas,
+.eliminar {
+  background: none;
+  border: none;
+  width: 1.5rem;
+  aspect-ratio: 1/1;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menos {
+  background-image: url('../img/remove-outline.svg');
+}
+
+.menos:hover {
+  background-image: url('../img/remove-fill.svg');
+  cursor: pointer;
+}
+
+.mas {
+  background-image: url('../img/add-outline.svg');
+}
+
+.mas:hover {
+  background-image: url('../img/add-fill.svg');
+  cursor: pointer;
+}
+
+.eliminar {
+  background-image: url('../img/close-fill.svg');
+  position: absolute;
+  width: 1rem;
+  top: -2.7rem;
+  right: -0.4rem;
+}
+
+.eliminar:hover {
+  background-image: url('../img/close-fill-hover.svg');
+  cursor: pointer;
+}
 
 
 
@@ -502,6 +545,26 @@ section {
 
 #quienes-somos img {
   display: none;
+}
+
+/* Compatibilidad con navegadores que no soportan backdrop-filter */
+@supports (backdrop-filter: blur(1em)) {
+  .primary-navigation,
+  .primary-fav,
+  .primary-cart {
+    background-color: var(--bg-color-200-75);
+    backdrop-filter: blur(2em);
+  }
+}
+
+@supports (-webkit-backdrop-filter: blur(1em)) {
+  .primary-navigation,
+  .primary-fav,
+  .primary-cart {
+    background-color: var(--bg-color-200-75);
+    backdrop-filter: blur(2em);
+    -webkit-backdrop-filter: blur(2em);
+  }
 }
 
 /* Regla para pantallas y ancho HASTA 768px */

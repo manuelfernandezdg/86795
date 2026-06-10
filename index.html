@@ -7,7 +7,7 @@
     <title>Pulp Fiction</title>
     <link rel="stylesheet" href="css/estilos.css">
     <script src="js/menu.js" defer></script>
-    <script src="js/clase12.js" defer></script>
+    <script src="js/clase13-3.js" defer></script>
   </head>
   <body>
     <header>
@@ -28,17 +28,110 @@
 
           <button class="cart-btn" aria-label="Ver mi carrito" aria-controls="primary-cart" aria-expanded="false">
             <span class="sr-only">Ver mi carrito</span>
-            <span class="cart-count"></span>
+            <span id="cart-count" class="cart-count">1</span>
           </button>
 
           <aside class="mi-carrito primary-cart" id="primary-cart" data-visible="false">
             <h1>Mi carrito <button class="cart-btn-cerrar"><span class="sr-only">Cerrar ventana</span></button></h1>
             <ul class="lista-carrito">
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>4</li>
+              <li>
+                <img src="img/001.jpg" alt="Portada del libro The Shadow #1">
+                <div>
+                  <h2>The Shadow #1</h2>
+                  <h3>$17.000 x 1 = $17.000</h3>
+                </div>
+                <div class="cart-controles">
+                  <button data-id="" class="menos">
+                    <span class="sr-only">Restar -1</span>
+                  </button>
+                  <span>1</span>
+                  <button data-id="" class="mas">
+                    <span class="sr-only">Sumar +1</span>
+                  </button>
+                  <button data-id="" class="eliminar">
+                    <span class="sr-only">Quitar item del carrito</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="img/001.jpg" alt="Portada del libro The Shadow #1">
+                <div>
+                  <h2>The Shadow #1</h2>
+                  <h3>$17.000 x 1 = $17.000</h3>
+                </div>
+                <div class="cart-controles">
+                  <button data-id="" class="menos">
+                    <span class="sr-only">Restar -1</span>
+                  </button>
+                  <span>1</span>
+                  <button data-id="" class="mas">
+                    <span class="sr-only">Sumar +1</span>
+                  </button>
+                  <button data-id="" class="eliminar">
+                    <span class="sr-only">Quitar item del carrito</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="img/001.jpg" alt="Portada del libro The Shadow #1">
+                <div>
+                  <h2>The Shadow #1</h2>
+                  <h3>$17.000 x 1 = $17.000</h3>
+                </div>
+                <div class="cart-controles">
+                  <button data-id="" class="menos">
+                    <span class="sr-only">Restar -1</span>
+                  </button>
+                  <span>1</span>
+                  <button data-id="" class="mas">
+                    <span class="sr-only">Sumar +1</span>
+                  </button>
+                  <button data-id="" class="eliminar">
+                    <span class="sr-only">Quitar item del carrito</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="img/001.jpg" alt="Portada del libro The Shadow #1">
+                <div>
+                  <h2>The Shadow #1</h2>
+                  <h3>$17.000 x 1 = $17.000</h3>
+                </div>
+                <div class="cart-controles">
+                  <button data-id="" class="menos">
+                    <span class="sr-only">Restar -1</span>
+                  </button>
+                  <span>1</span>
+                  <button data-id="" class="mas">
+                    <span class="sr-only">Sumar +1</span>
+                  </button>
+                  <button data-id="" class="eliminar">
+                    <span class="sr-only">Quitar item del carrito</span>
+                  </button>
+                </div>
+              </li>
+              <li>
+                <img src="img/001.jpg" alt="Portada del libro The Shadow #1">
+                <div>
+                  <h2>The Shadow #1</h2>
+                  <h3>$17.000 x 1 = $17.000</h3>
+                </div>
+                <div class="cart-controles">
+                  <button data-id="" class="menos">
+                    <span class="sr-only">Restar -1</span>
+                  </button>
+                  <span>1</span>
+                  <button data-id="" class="mas">
+                    <span class="sr-only">Sumar +1</span>
+                  </button>
+                  <button data-id="" class="eliminar">
+                    <span class="sr-only">Quitar item del carrito</span>
+                  </button>
+                </div>
+              </li>
             </ul>
+            <h2 class="cart-total total">Total: $17.000</h2>
+            <button class="checkout">Finalizar la compra</button>
           </aside>
           
           <button class="menu-btn" aria-label="Ingresar al menu principal" aria-controls="primary-navigation" aria-expanded="false">
